@@ -1,0 +1,77 @@
+{
+    "name": "@edhspace/api",
+    "version": "0.1.0",
+    "type": "module",
+    "sideEffects": false,
+    "description": "Typed capability API for curated native EDHspace extensions",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git",
+        "directory": "packages/api"
+    },
+    "homepage": "https://github.com/EDHspace/extensions/tree/main/packages/api#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "exports": {
+        "./math": {
+            "types": "./dist/math.d.ts",
+            "import": "./dist/math.js",
+            "require": "./dist/math.cjs"
+        },
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./host": {
+            "types": "./dist/host.d.ts",
+            "import": "./dist/host.js",
+            "require": "./dist/host.cjs"
+        },
+        "./react": {
+            "types": "./dist/react.d.ts",
+            "import": "./dist/react.js",
+            "require": "./dist/react.cjs"
+        }
+    },
+    "scripts": {
+        "build": "tsup",
+        "typecheck": "tsc --noEmit",
+        "test": "npm run build && vitest run"
+    },
+    "dependencies": {
+        "zod": "^4.6.5"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0"
+    },
+    "peerDependenciesMeta": {
+        "react": {
+            "optional": true
+        }
+    },
+    "devDependencies": {
+        "@edhspace/ui": "^0.1.0",
+        "@types/node": "^20.10.0",
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "tsup": "^8.0.0",
+        "typescript": "^5.3.3",
+        "vitest": "3.2.7"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}

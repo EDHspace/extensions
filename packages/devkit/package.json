@@ -1,0 +1,48 @@
+{
+    "name": "@edhspace/devkit",
+    "version": "0.1.0",
+    "type": "module",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git",
+        "directory": "packages/devkit"
+    },
+    "homepage": "https://github.com/EDHspace/extensions/tree/main/packages/devkit#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "description": "Build and validate curated EDHspace community extensions",
+    "bin": {
+        "edhspace": "dist/cli.js"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run"
+    },
+    "dependencies": {
+        "@edhspace/api": "^0.1.0",
+        "@edhspace/ui": "^0.1.0",
+        "esbuild": "0.27.1",
+        "typescript": "5.9.3",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8"
+    },
+    "devDependencies": {
+        "@types/node": "^20.10.0",
+        "tsup": "^8.0.0",
+        "vitest": "3.2.7"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}

@@ -1,0 +1,238 @@
+.edhspace-ui {
+    --edhspace-background: var(--set-panel, #fff);
+    --edhspace-foreground: var(--set-text, #182b24);
+    --edhspace-muted: var(--set-muted, #485b53);
+    --edhspace-accent: var(--set-accent, #245a42);
+    --edhspace-border: var(--set-border, #81968b);
+    --edhspace-font: inherit;
+    min-height: 100%;
+    background: var(--edhspace-background);
+    color: var(--edhspace-foreground);
+    font-family: var(--edhspace-font);
+    line-height: 1.5;
+    accent-color: var(--edhspace-accent);
+    caret-color: var(--edhspace-accent);
+    scrollbar-color: var(--edhspace-border) var(--edhspace-background);
+}
+.edhspace-ui *,
+.edhspace-ui *::before,
+.edhspace-ui *::after {
+    box-sizing: border-box;
+}
+.edhspace-ui ::selection {
+    background: var(--edhspace-accent);
+    color: var(--edhspace-background);
+}
+.edhspace-panel {
+    padding: 1rem;
+    min-width: 0;
+}
+.edhspace-panel > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    margin-bottom: 1rem;
+}
+.edhspace-panel h2 {
+    flex: 1 1 12rem;
+    font-size: 1.15rem;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.edhspace-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem;
+    align-items: center;
+}
+.edhspace-ui .edhspace-button,
+.edhspace-ui .edhspace-field input {
+    margin: 0;
+    min-height: 44px;
+    max-width: 100%;
+    border: 1px solid var(--edhspace-border);
+    border-radius: 6px;
+    background: var(--edhspace-background);
+    color: var(--edhspace-foreground);
+    font: inherit;
+    padding: 0.5rem 0.75rem;
+}
+.edhspace-ui .edhspace-button {
+    cursor: pointer;
+    min-width: 44px;
+    overflow-wrap: anywhere;
+}
+.edhspace-ui .edhspace-button:hover:not(:disabled) {
+    background: color-mix(in srgb, var(--edhspace-accent) 12%, var(--edhspace-background));
+}
+.edhspace-ui .edhspace-button:disabled,
+.edhspace-ui .edhspace-button[aria-disabled="true"] {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+.edhspace-ui :focus-visible {
+    outline: 2px solid var(--edhspace-accent);
+    outline-offset: 2px;
+}
+.edhspace-ui .edhspace-field {
+    display: grid;
+    gap: 0.4rem;
+    min-width: 0;
+    margin: 0;
+}
+.edhspace-notice {
+    color: var(--edhspace-muted);
+    overflow-wrap: anywhere;
+}
+.edhspace-notice[role="alert"] {
+    color: var(--edhspace-foreground);
+    font-weight: 600;
+}
+.edhspace-card-list {
+    padding: 0;
+    margin: 1rem 0;
+    list-style: none;
+}
+.edhspace-card-list > li {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px solid var(--edhspace-border);
+}
+.edhspace-card-list > li > span:first-child {
+    min-width: 2ch;
+    font-variant-numeric: tabular-nums;
+}
+.edhspace-card-list .edhspace-button {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    text-align: start;
+}
+.edhspace-ui .mana-cost {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.12rem;
+    max-width: 35%;
+}
+.edhspace-ui .mana-cost img {
+    display: block;
+    width: 1em;
+    height: 1em;
+    min-width: 14px;
+    min-height: 14px;
+}
+.edhspace-ui .oracle-symbol {
+    display: inline-block;
+    vertical-align: -0.12em;
+    margin-inline: 0.06em;
+}
+.edhspace-ui .oracle-symbol img {
+    width: 1em;
+    height: 1em;
+}
+.edhspace-filter-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: end;
+    margin-block: 1rem;
+}
+.edhspace-filter-bar > * {
+    flex: 1 1 9rem;
+}
+.edhspace-filter-bar .edhspace-field input {
+    width: 100%;
+}
+.edhspace-stat {
+    display: inline-block;
+    margin-inline-end: 1rem;
+    font-variant-numeric: tabular-nums;
+}
+.edhspace-table-scroll {
+    overflow-x: auto;
+    margin-block: 1rem;
+}
+.edhspace-table-scroll table {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+}
+.edhspace-table-scroll th,
+.edhspace-table-scroll td {
+    padding: 0.55rem;
+    text-align: start;
+    border-bottom: 1px solid var(--edhspace-border);
+}
+.edhspace-card-list .inline-card-link {
+    flex: 1;
+    min-width: 0;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    color: var(--edhspace-accent);
+    text-underline-offset: 0.2em;
+    overflow-wrap: anywhere;
+}
+.edhspace-api-dialog {
+    width: min(36rem, calc(100vw - 2rem));
+    max-height: calc(100dvh - 2rem);
+    overflow: auto;
+    padding: 1.25rem;
+    border: 1px solid var(--edhspace-border);
+    border-radius: 6px;
+    background: var(--edhspace-background);
+    color: var(--edhspace-foreground);
+    font: inherit;
+}
+.edhspace-api-dialog::backdrop {
+    background: rgb(0 0 0 / 45%);
+}
+.edhspace-api-dialog:not([open]) {
+    display: none;
+}
+.edhspace-api-dialog h2 {
+    margin-block: 0 0.75rem;
+    font-size: 1.15rem;
+}
+.edhspace-api-dialog dl {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem 0.75rem;
+}
+.edhspace-api-dialog dt {
+    font-weight: 600;
+}
+.edhspace-api-dialog p {
+    overflow-wrap: anywhere;
+}
+@media (min-width: 600px) {
+    .edhspace-api-dialog dl {
+        grid-template-columns: auto minmax(0, 1fr);
+    }
+}
+.edhspace-api-dialog dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+.edhspace-api-dialog pre {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    max-height: 12rem;
+    overflow: auto;
+}
+.edhspace-ui .edhspace-api-remember {
+    display: flex;
+    gap: 0.65rem;
+    align-items: center;
+    min-height: 44px;
+    margin-block: 1rem;
+}
+.edhspace-api-remember input {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+}

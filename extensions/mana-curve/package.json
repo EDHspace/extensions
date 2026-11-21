@@ -1,0 +1,70 @@
+{
+    "name": "@edhspace-extension/mana-curve",
+    "version": "0.1.0",
+    "type": "module",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git",
+        "directory": "extensions/mana-curve"
+    },
+    "homepage": "https://github.com/EDHspace/extensions/tree/main/extensions/mana-curve#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "title": "Mana curve & draw calculator",
+    "description": "Inspect your mana curve and calculate draw probabilities without editing the deck.",
+    "author": "EDHspace",
+    "icon": "assets/icon.svg",
+    "apiVersion": 1,
+    "permissions": [
+        "deck.read",
+        "cards.inspect"
+    ],
+    "panels": [
+        {
+            "id": "mana-curve",
+            "title": "Mana curve & draw calculator",
+            "entry": "src/index.tsx",
+            "location": "workspace"
+        }
+    ],
+    "commands": [],
+    "preferences": [
+        {
+            "id": "show-cards",
+            "title": "Show the deck's card list",
+            "type": "boolean",
+            "default": true
+        }
+    ],
+    "files": [
+        "dist",
+        "assets",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/mana-curve.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "build": "edhspace build .",
+        "typecheck": "tsc --noEmit",
+        "dev": "edhspace dev ."
+    },
+    "peerDependencies": {
+        "@edhspace/api": "^0.1.0",
+        "@edhspace/ui": "^0.1.0",
+        "react": "^19.0.0"
+    },
+    "devDependencies": {
+        "@edhspace/devkit": "^0.1.0"
+    }
+}

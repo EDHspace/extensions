@@ -1,0 +1,5 @@
+{
+    "extends": "../../packages/ui/tsconfig.json",
+    "compilerOptions": { "rootDir": "src", "noEmit": true },
+    "include": ["src"]
+}

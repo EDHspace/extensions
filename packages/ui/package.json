@@ -1,0 +1,55 @@
+{
+    "name": "@edhspace/ui",
+    "version": "0.1.0",
+    "type": "module",
+    "description": "Standalone themed React primitives for EDHspace and community extensions",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git",
+        "directory": "packages/ui"
+    },
+    "homepage": "https://github.com/EDHspace/extensions/tree/main/packages/ui#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/index.js",
+            "require": "./dist/index.cjs"
+        },
+        "./styles.css": "./dist/styles.css"
+    },
+    "sideEffects": [
+        "*.css"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "typecheck": "tsc --noEmit",
+        "test": "vitest run"
+    },
+    "peerDependencies": {
+        "react": "^19.0.0"
+    },
+    "devDependencies": {
+        "@types/react": "^19.2.18",
+        "@types/react-dom": "^19.2.4",
+        "react": "^19.2.8",
+        "react-dom": "^19.2.8",
+        "tsup": "^8.0.0",
+        "typescript": "^5.3.3",
+        "vitest": "3.2.7"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}

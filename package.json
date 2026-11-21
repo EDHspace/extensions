@@ -1,0 +1,31 @@
+{
+    "name": "edhspace-extension-platform",
+    "private": true,
+    "version": "0.1.0",
+    "type": "module",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git"
+    },
+    "homepage": "https://github.com/EDHspace/extensions#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "packageManager": "npm@10.8.2",
+    "workspaces": [
+        "packages/*",
+        "extensions/*"
+    ],
+    "scripts": {
+        "build": "npm --prefix packages/ui run build && npm --prefix packages/api run build && npm --prefix packages/devkit run build && node packages/devkit/dist/cli.js build-all extensions",
+        "check": "node packages/devkit/dist/cli.js check-all extensions",
+        "test": "npm --prefix packages/api test && npm --prefix packages/ui test && npm --prefix packages/devkit test",
+        "typecheck": "npm --prefix packages/api run typecheck && npm --prefix packages/ui run typecheck && npm --prefix packages/devkit run typecheck",
+        "dev": "npm run build && node packages/devkit/dist/cli.js dev",
+        "build:extension": "node packages/devkit/dist/cli.js build"
+    },
+    "engines": {
+        "node": ">=22.12.0"
+    }
+}

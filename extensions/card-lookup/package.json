@@ -1,0 +1,70 @@
+{
+    "name": "@edhspace-extension/card-lookup",
+    "version": "0.1.0",
+    "type": "module",
+    "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/EDHspace/extensions.git",
+        "directory": "extensions/card-lookup"
+    },
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
+    "homepage": "https://github.com/EDHspace/extensions/tree/main/extensions/card-lookup#readme",
+    "bugs": {
+        "url": "https://github.com/EDHspace/extensions/issues"
+    },
+    "title": "External card lookup",
+    "description": "Look up a card through Scryfall with explicit API request approval.",
+    "author": "EDHspace",
+    "icon": "assets/icon.svg",
+    "apiVersion": 1,
+    "permissions": [
+        "network.request"
+    ],
+    "network": [
+        {
+            "id": "scryfall",
+            "title": "Scryfall card lookup",
+            "url": "https://api.scryfall.com/cards/",
+            "methods": [
+                "GET"
+            ]
+        }
+    ],
+    "panels": [
+        {
+            "id": "card-lookup",
+            "title": "External card lookup",
+            "entry": "src/index.tsx",
+            "location": "workspace"
+        }
+    ],
+    "files": [
+        "dist",
+        "assets",
+        "README.md"
+    ],
+    "exports": {
+        ".": {
+            "types": "./dist/index.d.ts",
+            "import": "./dist/card-lookup.js"
+        },
+        "./package.json": "./package.json"
+    },
+    "scripts": {
+        "build": "edhspace build .",
+        "typecheck": "tsc --noEmit",
+        "dev": "edhspace dev ."
+    },
+    "peerDependencies": {
+        "@edhspace/api": "^0.1.0",
+        "@edhspace/ui": "^0.1.0",
+        "react": "^19.0.0"
+    },
+    "devDependencies": {
+        "@edhspace/devkit": "^0.1.0"
+    }
+}
